@@ -1,0 +1,53 @@
+.filter {
+  @include flex($direction: column, $align: stretch, $gap: 30px);
+  margin-top: 30px;
+  padding: 30px;
+  border: 1px solid $--border;
+  border-radius: 10px;
+  background-color: $--white;
+
+  &-row {
+    width: 100%;
+    @include flex($justify: stretch, $align: flex-start, $gap: 100px);
+  }
+
+  &-column {
+    @include flex($direction: column, $align: stretch, $gap: 26px);
+
+    &.grow {
+      width: 100%;
+    }
+  }
+
+  &-wrap {
+    @include flex($justify: flex-start, $gap: 30px);
+
+    &.grow {
+      width: 100%;
+      height: 40px;
+      flex-grow: 1;
+    }
+  }
+
+  &-label {
+    flex-shrink: 0;
+    width: 60px;
+    @include B-3-M;
+  }
+
+  &-select-target {
+    width: 300px;
+  }
+
+  &-input {
+    &-period {
+      width: 100%;
+      @include flex($justify: flex-start, $gap: 10px);
+    }
+  }
+
+  .handler {
+    width: 100%;
+    @include flex($gap: 10px);
+  }
+}

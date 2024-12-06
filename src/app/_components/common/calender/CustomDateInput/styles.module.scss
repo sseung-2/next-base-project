@@ -1,0 +1,33 @@
+.date {
+  &-target {
+    @include flex($justify: stretch);
+    @include inputBox;
+    height: 40px;
+
+    &.date-open {
+      border-color: $--point-02;
+    }
+
+    > input {
+      width: 100%;
+      min-width: 70px;
+      border: none;
+      flex-grow: 0;
+      flex-shrink: 1;
+      @include in-2-R;
+      cursor: pointer;
+
+      &.time {
+        min-width: 100px;
+      }
+    }
+  }
+
+  &-icon {
+    flex-shrink: 0;
+  }
+
+  &-error {
+    border-color: $--status-error;
+  }
+}

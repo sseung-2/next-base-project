@@ -1,0 +1,112 @@
+/** font weight **/
+$--regular: 400;
+$--medium: 500;
+$--semi-bold: 600;
+$--bold: 700;
+
+@mixin H_1_SB {
+  font-size: 32px;
+  line-height: 100%;
+  font-weight: $--semi-bold;
+  letter-spacing: 0;
+}
+@mixin H_2_B {
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: $--bold;
+  letter-spacing: 0;
+}
+@mixin H_2_SB {
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: $--semi-bold;
+  letter-spacing: 0;
+}
+@mixin H_3_M {
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: $--semi-bold;
+  letter-spacing: 0;
+}
+
+@mixin B_1_M {
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: $--medium;
+  letter-spacing: 0;
+}
+@mixin B_2_B {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: $--bold;
+  letter-spacing: -0.2px;
+}
+@mixin B_2_M {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: $--medium;
+  letter-spacing: -0.2px;
+}
+@mixin B_2_R {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: $--regular;
+  letter-spacing: -0.2px;
+}
+@mixin B_3_M {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: $--medium;
+  letter-spacing: -0.2px;
+}
+@mixin B_3_R {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: $--regular;
+  letter-spacing: -0.2px;
+}
+
+@mixin btn_1_B {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: $--bold;
+  letter-spacing: -0.2px;
+}
+@mixin btn_2_B {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: $--bold;
+  letter-spacing: -0.2px;
+}
+@mixin btn_3_M {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: $--medium;
+  letter-spacing: -0.2px;
+}
+
+@mixin in_1_R {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: $--regular;
+  letter-spacing: -0.2px;
+}
+@mixin in_2_R {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: $--regular;
+  letter-spacing: -0.2px;
+}
+
+@mixin pop_1_B {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: $--bold;
+  letter-spacing: -0.2px;
+}
+@mixin pop_2_R {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: $--regular;
+  letter-spacing: -0.2px;
+}

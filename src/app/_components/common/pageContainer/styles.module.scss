@@ -1,0 +1,5 @@
+.page-container {
+  min-width: calc(1200px - $--menu-width);
+  display: flex;
+  flex-direction: column;
+}

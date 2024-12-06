@@ -1,0 +1,71 @@
+.paginationBox {
+  gap: 10px;
+  @include flex(_, center, center);
+  padding: 14px 0;
+  .firstPageBtn {
+    cursor: pointer;
+    @include flex(_, center, center);
+    color: $--gray-04;
+    &:hover {
+      color: $--point-02;
+    }
+  }
+
+  .containerClassName {
+    @include flex(_, center, center, 10px);
+    @include B_3_R;
+    .pageClassName {
+      width: 28px;
+      height: 28px;
+      color: $--gray-04;
+      height: 100%;
+      @include flex(center, center);
+      cursor: pointer;
+      &:hover {
+        color: $--point-02;
+      }
+    }
+
+    .activeClassName {
+      color: $--white;
+      background-color: $--point-02;
+      border-radius: 4px;
+      height: 28px;
+      &:hover {
+        color: $--white;
+      }
+    }
+
+    .nextClassName {
+      width: 28px;
+      height: 28px;
+      rotate: 180deg;
+      cursor: pointer;
+      color: $--gray-04;
+      &:hover {
+        color: $--point-02;
+      }
+    }
+
+    .previousClassName {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      color: $--gray-04;
+      &:hover {
+        color: $--point-02;
+      }
+    }
+  }
+
+  .lastPageBtn {
+    cursor: pointer;
+    rotate: 180deg;
+    height: 100%;
+    @include flex(_, center, center);
+    color: $--gray-04;
+    &:hover {
+      color: $--point-02;
+    }
+  }
+}

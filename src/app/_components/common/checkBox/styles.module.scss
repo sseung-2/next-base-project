@@ -1,0 +1,32 @@
+.save-email {
+  cursor: pointer;
+  @include flex($justify: flex-start, $gap: 10px);
+
+  .checkbox-wrap {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    background-color: $--white;
+
+    &.is-not-check {
+      border: 1px solid $--border;
+
+      > .checked-icon {
+        display: none;
+      }
+    }
+  }
+
+  > input[type="checkbox"] {
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  .label {
+    @include B_3_M;
+    color: $--gray-01;
+  }
+}

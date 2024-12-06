@@ -1,0 +1,45 @@
+.button {
+  @include flex($gap: 6px);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.S {
+    width: 120px;
+    height: 40px;
+    @include btn-2-B;
+  }
+
+  &.M {
+    width: 160px;
+    height: 40px;
+    @include btn-2-B;
+  }
+
+  &.L {
+    width: 360px;
+    height: 52px;
+    @include btn-1-B;
+  }
+
+  &.FILL {
+    color: $--white;
+    background-color: $--point-02;
+
+    &:hover {
+      background-color: $--point-01;
+    }
+  }
+
+  &.LINE,
+  &.ICON {
+    border: 1px solid $--point-02;
+    color: $--point-02;
+    background-color: $--white;
+
+    &:hover {
+      color: $--white;
+      background-color: $--point-02;
+    }
+  }
+}

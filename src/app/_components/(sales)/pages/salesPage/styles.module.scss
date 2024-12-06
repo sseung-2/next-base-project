@@ -1,0 +1,22 @@
+.refund-button {
+  cursor: pointer;
+  color: $--gray-04;
+  @include B_3_M;
+
+  &:hover {
+    color: $--status-error;
+    text-decoration: underline;
+  }
+}
+
+.buy {
+  background-color: $--bg-gray;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+.refund {
+  background-color: $--red-02;
+  color: $--status-error;
+  padding: 2px 10px;
+  border-radius: 4px;
+}

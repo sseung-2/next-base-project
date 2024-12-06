@@ -1,0 +1,35 @@
+.header {
+  @include flex($justify: space-between);
+  padding: 24px 30px;
+  height: $--header-height;
+  border: 1px solid $--border;
+  background-color: $--bg-white;
+  color: $--gray-01;
+
+  .logo-container {
+    cursor: pointer;
+  }
+
+  .login-info-container {
+    @include flex($gap: 12px);
+
+    span {
+      @include B_3_R();
+    }
+    button {
+      padding: 6px 12px;
+      border: 1px solid $--border;
+      border-radius: 90px;
+      background-color: $--white;
+      color: $--gray-04;
+      cursor: pointer;
+      @include btn_3_M();
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $--point-02;
+        color: $--white;
+      }
+    }
+  }
+}

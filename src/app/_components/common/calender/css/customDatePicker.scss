@@ -1,0 +1,161 @@
+.custom-react-datepicker__wrapper {
+  width: 100%;
+  @include flex($justify: space-between);
+  z-index: 15;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+  .react-datepicker {
+    @include flex($align: flex-start);
+    margin-top: 7px;
+    background-color: #fff;
+
+    border-radius: 10px;
+    box-shadow: 0px 5px 24px 0px #0000001f;
+
+    &__aria-live {
+      display: none;
+    }
+
+    &-wrapper {
+      width: 100%;
+    }
+
+    &__header {
+    }
+
+    &__day {
+      &-names {
+        margin-top: 20px;
+        @include flex($gap: 6px);
+        @include B-3-R;
+        text-align: center;
+      }
+
+      &-name {
+        width: 36px;
+      }
+    }
+
+    &__month {
+      margin-top: 12px;
+      @include flex($direction: column, $gap: 3px);
+
+      &-container {
+        padding: 20px;
+      }
+    }
+
+    &__week {
+      @include flex($justify: space-between);
+      width: 100%;
+      text-align: center;
+    }
+
+    &__day {
+      @include flex();
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      @include B-2-R;
+
+      &.sunDay {
+        color: red !important;
+      }
+
+      &--highlighted {
+        position: relative;
+        border-radius: 0;
+        background-color: inherit;
+        color: #111111;
+      }
+    }
+
+    &__day-name:first-child {
+      color: #ff0404;
+    }
+
+    &__day {
+      &--disabled {
+        opacity: 0.2;
+      }
+
+      &--today {
+        position: relative;
+      }
+
+      &--selected {
+        background-color: $--point-02;
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: $--point-03;
+      }
+    }
+
+    &-time__header {
+      @include flex();
+      height: 25px;
+      margin-bottom: 17px;
+    }
+
+    &__time-container {
+      padding: 20px 0;
+      background-color: $--point-03;
+    }
+
+    &__time {
+      width: 100%;
+      overflow-y: auto;
+
+      &-list {
+        height: 240px !important;
+        overflow-y: scroll;
+
+        &-item {
+          padding: 5px 20px;
+          &:hover {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    &-ignore-onclickoutside {
+      // border: 1px solid $--keycolor !important;
+      outline: none;
+    }
+  }
+}
+
+.custom_month_calendar {
+  &.react-datepicker {
+    .react-datepicker {
+      &__monthPicker {
+        width: 100%;
+        max-width: 220px;
+        @include flex();
+        flex-wrap: wrap;
+      }
+      &__month {
+        &-wrapper {
+          @include flex();
+        }
+
+        &-text {
+          @include flex();
+          width: 30px;
+          height: 30px;
+        }
+      }
+      &__header {
+        // background-color: $--keycolor-alpha-10;
+      }
+    }
+  }
+}

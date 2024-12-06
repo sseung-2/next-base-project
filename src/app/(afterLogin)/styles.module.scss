@@ -1,0 +1,15 @@
+.page_wrap {
+  height: 100dvh;
+
+  .content_wrap {
+    height: calc(100dvh - $--header-height);
+    @include flex($justify: stretch, $align: stretch);
+
+    > main {
+      width: 100%;
+      padding: 30px 45px;
+      background-color: $--bg-gray;
+      overflow: auto;
+    }
+  }
+}

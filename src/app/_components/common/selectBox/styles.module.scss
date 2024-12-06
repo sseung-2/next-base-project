@@ -1,0 +1,99 @@
+.select {
+  // width: 100%;
+  cursor: pointer;
+
+  &-target {
+    position: relative;
+    @include flex($justify: stretch);
+    width: 100%;
+    height: 40px;
+    @include inputBox;
+    overflow: hidden;
+
+    &.S {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    &.disabled {
+      border: 0;
+    }
+
+    &.open {
+      border-color: $--point-02;
+    }
+
+    &.error {
+      border-color: $--status-error;
+    }
+
+    &-value {
+      flex: 1;
+      @include ellipsis;
+      z-index: 11;
+    }
+
+    &-arrow {
+      pointer-events: none;
+
+      &.open {
+        transform: scale(-1);
+      }
+    }
+  }
+}
+
+$--option-height: 40px;
+
+.option {
+  position: relative;
+  width: 100%;
+  z-index: 1001;
+  height: 100%;
+
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+
+  &-list {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-height: calc($--option-height * 3 + 24px);
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid $--border;
+    border-radius: 8px;
+    box-shadow: 0px 5px 24px 0px #0000001f;
+
+    &.open {
+      border-color: $--border;
+    }
+
+    &-item {
+      padding: 10px 16px;
+      @include flex($justify: space-between);
+      @include in-2-R;
+      color: $--gray-04;
+
+      &.selected {
+        color: $--point-02;
+        background-color: $--point-03;
+      }
+
+      &:hover {
+        color: $--point-02;
+        background-color: $--point-03;
+      }
+    }
+  }
+}
+
+.dimm {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  margin: 0 auto;
+  cursor: pointer;
+}

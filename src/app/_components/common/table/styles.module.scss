@@ -1,0 +1,57 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-start;
+  border: 1px solid $--border;
+  border-radius: 10px;
+  position: relative;
+  overflow: scroll;
+
+  &.no-data-container {
+    flex: 2;
+  }
+
+  .table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    height: 100%;
+    clip-path: inset(0 round 10px);
+    tr {
+      height: 50px;
+    }
+    .thead {
+      background-color: $--bg-gray;
+      tr {
+        margin: 0;
+        color: $--gray-03;
+        @include B_3_M;
+        th {
+          padding: 10px;
+        }
+      }
+    }
+
+    .tbody {
+      background-color: $--white;
+      tr {
+        margin: 0;
+        color: $--gray-02;
+        @include B_3_M;
+        &:hover {
+          background-color: $--point-03;
+        }
+
+        td {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 400px;
+          min-width: 80px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

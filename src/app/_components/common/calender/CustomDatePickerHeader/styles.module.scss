@@ -1,0 +1,31 @@
+.calendar {
+  &-header {
+    @include flex($justify: space-between);
+  }
+
+  &-month {
+    @include B-2-B;
+    color: $--gray-01;
+  }
+
+  &-arrow {
+    color: $--gray-04;
+    cursor: pointer;
+
+    &-prev {
+      transform: rotate(90deg);
+    }
+
+    &-next {
+      transform: rotate(-90deg);
+    }
+
+    &:hover {
+      color: $--point-02;
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+  }
+}

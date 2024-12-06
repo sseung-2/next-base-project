@@ -1,0 +1,11 @@
+.title_wrap {
+  @include flex($justify: space-between);
+
+  > .page_title {
+    @include H_2_B;
+  }
+
+  > .handler {
+    @include flex;
+  }
+}

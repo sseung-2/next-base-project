@@ -1,0 +1,9 @@
+.btn-wrap {
+  width: 40px;
+  height: 40px;
+  @include flex;
+  background-color: $--white;
+  border: 1px solid $--point-02;
+  border-radius: 8px;
+  cursor: pointer;
+}

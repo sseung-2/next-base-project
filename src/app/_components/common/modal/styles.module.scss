@@ -1,0 +1,96 @@
+.pageModalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.dimm {
+  position: fixed;
+  inset: 0;
+  background-color: $--modal-dimm;
+  z-index: 999;
+}
+
+.container {
+  box-shadow: 0px 5px 24px 0px #0000001f;
+
+  .popup {
+    max-width: 300px;
+    width: 90dvw;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .title {
+      order: 1;
+      margin: 0;
+      padding: 30px 0;
+      @include pop-1-B;
+      color: $--gray-01;
+
+      &.hasContent {
+        padding: 30px 0 0;
+      }
+    }
+
+    .content {
+      order: 2;
+      margin: 10px 0 0;
+      padding: 0 0 30px;
+      white-space: pre-line;
+      @include pop-2-R;
+      color: $--gray-04;
+    }
+
+    .btnWrap {
+      order: 3;
+      width: 100%;
+      @include flex($justify: stretch);
+      margin: 0;
+      border-top: 1px solid $--border;
+      flex-wrap: nowrap;
+
+      .confirmBtn,
+      .cancelBtn {
+        margin: 0;
+        width: 100%;
+        padding: 15px;
+        border-radius: 0;
+        @include btn-2-B;
+        background-color: inherit;
+      }
+
+      .confirmBtn {
+        order: 2;
+        color: $--point-02;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        &:hover {
+          color: $--white;
+          background-color: $--point-02;
+        }
+      }
+
+      .cancelBtn {
+        order: 1;
+        color: $--gray-04;
+        border-right: 1px solid $--border;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        &:hover {
+          color: $--white;
+          background-color: $--gray-04;
+        }
+      }
+    }
+  }
+}

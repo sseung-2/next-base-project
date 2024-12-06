@@ -1,0 +1,5 @@
+.dropContainer {
+  position: relative;
+  @include flex($direction: column);
+  width: 100%;
+}

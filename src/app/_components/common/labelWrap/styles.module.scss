@@ -1,0 +1,12 @@
+.wrapper {
+  &.row {
+    @include flex($gap: 22px);
+  }
+
+  &.column {
+  }
+
+  > .label {
+    width: 60px;
+  }
+}
