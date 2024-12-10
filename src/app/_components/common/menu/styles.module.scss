@@ -40,11 +40,7 @@
         flex-grow: 0;
         height: 0;
         overflow: hidden;
-
-        &.open {
-          height: auto;
-          flex-grow: 1;
-        }
+        transition: height 0.3s ease;
 
         .subMenu {
           padding: 17px 10px;
