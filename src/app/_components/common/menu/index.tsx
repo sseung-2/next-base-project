@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MENU_LIST } from "../../../../constants/menu";
 import { usePathname } from "next/navigation";
 import { MenuArrowIcon } from "@icons/index";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import S from "./styles.module.scss";
 
 const Menu = () => {
@@ -12,19 +12,57 @@ const Menu = () => {
 
   const pathname = usePathname();
   const [open, setOpen] = useState<string>("");
+  const subMenuRefs = useRef<Record<string, HTMLUListElement | null>>({});
 
   const handleMenu = (title: string) => {
-    setOpen(open === title ? "" : title);
+    const subMenu = subMenuRefs.current[title];
+
+    if (open === title) {
+      if (subMenu) {
+        subMenu.style.height = `${subMenu.scrollHeight}px`;
+        requestAnimationFrame(() => {
+          subMenu.style.height = "0px";
+        });
+      }
+      setOpen("");
+    } else {
+      if (subMenu) {
+        subMenu.style.height = "0px";
+        requestAnimationFrame(() => {
+          const height = subMenu.scrollHeight;
+          subMenu.style.height = `${height}px`;
+        });
+      }
+
+      if (open && subMenuRefs.current[open]) {
+        const prevSubMenu = subMenuRefs.current[open];
+        if (prevSubMenu) {
+          prevSubMenu.style.height = `${prevSubMenu.scrollHeight}px`;
+          requestAnimationFrame(() => {
+            prevSubMenu.style.height = "0px";
+          });
+        }
+      }
+
+      setOpen(title);
+    }
   };
 
   useEffect(() => {
-    setOpen(
-      MENU.find((menu) =>
-        !!menu.submenu
-          ? !!menu.submenu.find(({ path }) => path === pathname)
-          : menu.path === pathname
-      )?.title || ""
+    const activeMenu = MENU.find((menu) =>
+      !!menu.submenu
+        ? !!menu.submenu.find(({ path }) => path === pathname)
+        : menu.path === pathname
     );
+    const activeTitle = activeMenu?.title || "";
+    setOpen(activeTitle);
+
+    if (activeTitle && subMenuRefs.current[activeTitle]) {
+      const activeSubMenu = subMenuRefs.current[activeTitle];
+      if (activeSubMenu) {
+        activeSubMenu.style.height = `${activeSubMenu.scrollHeight}px`;
+      }
+    }
   }, []);
 
   return (
@@ -54,7 +92,14 @@ const Menu = () => {
               )}
               {submenu && (
                 <ul
-                  className={`${S.subMenuList} ${open === title ? S.open : ""}`}
+                  className={`${S.subMenuList} ${open ? S.open : ""}`}
+                  ref={(el) => {
+                    if (el) subMenuRefs.current[title] = el;
+                  }}
+                  style={{
+                    overflow: "hidden",
+                    transition: "height 0.3s ease",
+                  }}
                 >
                   {submenu.map(({ title, path }) => {
                     let isActive = false;
@@ -65,21 +110,9 @@ const Menu = () => {
                         className={`${S.subMenu} ${isActive ? S.active : ""}`}
                         key={title}
                       >
-                        {path === pathname && pathname.includes("/register") ? (
-                          <button
-                            className={S.subTitle}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              window.location.reload();
-                            }}
-                          >
-                            {title}
-                          </button>
-                        ) : (
-                          <Link className={S.subTitle} href={path} prefetch>
-                            {title}
-                          </Link>
-                        )}
+                        <Link className={S.subTitle} href={path} prefetch>
+                          {title}
+                        </Link>
                       </li>
                     );
                   })}
