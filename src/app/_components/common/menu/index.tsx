@@ -96,10 +96,6 @@ const Menu = () => {
                   ref={(el) => {
                     if (el) subMenuRefs.current[title] = el;
                   }}
-                  style={{
-                    overflow: "hidden",
-                    transition: "height 0.3s ease",
-                  }}
                 >
                   {submenu.map(({ title, path }) => {
                     let isActive = false;
