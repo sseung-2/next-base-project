@@ -38,8 +38,8 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Keefo | Kiosk Admin",
-  description: "Keefo Kiosk Admin",
+  title: "Planeta | Admin",
+  description: "Planeta Admin",
 };
 
 export default function RootLayout({

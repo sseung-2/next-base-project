@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 
 export const getServerCookie = async (name: string) => {
-  return await cookies().get(name)?.value;
+  return cookies().get(name)?.value;
 };
 
 export const setServerCookie = async (name: string, value: string) => {

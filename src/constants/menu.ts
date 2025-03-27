@@ -13,30 +13,23 @@ interface MENU_ITEM {
 
 export const MENU_LIST: MENU_ITEM[] = [
   {
-    id: "sales",
-    title: "매출 현황",
-    path: "/sales",
+    id: "digital_card",
+    title: "디지털카드 현황",
+    path: "/digitalcard",
   },
   {
-    id: "matching",
-    title: "인증 현황",
-    path: "/matching",
-    submenu: [
-      {
-        id: "all_matching",
-        title: "전체 현황",
-        path: "/matching/all",
-      },
-      {
-        id: "day_matching",
-        title: "일별 현황",
-        path: "/matching/day",
-      },
-    ],
+    id: "scan",
+    title: "인증내역",
+    path: "/scan",
   },
   {
-    id: "photocard",
-    title: "포토카드 관리",
-    path: "/photocard",
+    id: "banner",
+    title: "배너관리",
+    path: "/banner",
+  },
+  {
+    id: "user",
+    title: "회원관리",
+    path: "/user",
   },
 ];

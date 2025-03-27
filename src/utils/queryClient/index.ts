@@ -5,6 +5,7 @@ const getQueryClient = () => {
     defaultOptions: {
       queries: {
         staleTime: 60 * 1000, // 1분 동안 데이터 캐싱
+        retry: 0,
       },
     },
   });
